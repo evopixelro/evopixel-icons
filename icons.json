@@ -1,0 +1,9 @@
+{
+  "icons": [
+    { "name": "evopixel", "label": "EvoPixel", "codepoint": "E002" },
+    { "name": "minecraft-evopixel", "label": "Minecraft EvoPixel", "codepoint": "E001" },
+    { "name": "rust-evopixel", "label": "Rust EvoPixel", "codepoint": "E003" },
+    { "name": "radio-evopixel", "label": "Radio EvoPixel", "codepoint": "E005" },
+    { "name": "bleah", "label": "bLeaH", "codepoint": "E004" }
+  ]
+}

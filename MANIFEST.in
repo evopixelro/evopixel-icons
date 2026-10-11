@@ -1,0 +1,6 @@
+include icons.json preview.html
+include scripts/build.py
+recursive-include css *.css
+recursive-include webfonts *.woff2
+recursive-include svgs *.svg
+recursive-include tests *.py

@@ -1,0 +1,33 @@
+@font-face {
+  font-family: "EvoPixel Icons";
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+  src: url("../webfonts/evopixel-icons.woff2?v=d345eb21e3ea") format("woff2");
+}
+.evopixel-icon {
+  display: inline-block;
+  font-family: "EvoPixel Icons";
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  line-height: 1;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.evopixel:before {
+  content: "\e002";
+}
+.minecraft-evopixel:before {
+  content: "\e001";
+}
+.rust-evopixel:before {
+  content: "\e003";
+}
+.radio-evopixel:before {
+  content: "\e005";
+}
+.bleah:before {
+  content: "\e004";
+}

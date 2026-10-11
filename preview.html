@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>EvoPixel Icons · Preview</title>
+  <link rel="stylesheet" href="css/evopixel-icons.css?v=33c330cd847f">
+  <style>
+    :root {
+      color-scheme: light;
+      --background: #f7f7f5;
+      --surface: #fff;
+      --ink: #202326;
+      --muted: #656b72;
+      --line: #e1e3e5;
+      --accent: #b73d00;
+      --icon-color: #202326;
+      --icon-size: 96px;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--background); color: var(--ink); font: 15px/1.5 system-ui, sans-serif; }
+    body.dark {
+      color-scheme: dark;
+      --background: #17191c;
+      --surface: #22252a;
+      --ink: #f4f5f6;
+      --muted: #b3b8bf;
+      --line: #393e45;
+      --accent: #ff935d;
+    }
+    main { max-width: 1200px; margin: auto; padding: 48px 24px 32px; }
+    header { display: flex; justify-content: space-between; align-items: center; gap: 24px; margin-bottom: 32px; }
+    h1 { margin: 0 0 8px; font-size: clamp(28px, 4vw, 36px); line-height: 1.2; letter-spacing: -.03em; }
+    p { margin: 0; color: var(--muted); }
+    .formats { flex-shrink: 0; color: var(--muted); font: 12px ui-monospace, monospace; }
+    .toolbar { display: flex; align-items: center; flex-wrap: wrap; gap: 20px; margin-bottom: 20px; padding: 16px 20px; border: 1px solid var(--line); border-radius: 10px; background: var(--surface); }
+    .size-control { display: flex; align-items: center; gap: 12px; }
+    label { font-size: 13px; font-weight: 600; }
+    input[type="range"] { width: min(160px, 36vw); accent-color: var(--accent); }
+    output { min-width: 44px; color: var(--muted); font-size: 12px; font-variant-numeric: tabular-nums; }
+    .toolbar-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 16px; margin-left: auto; }
+    .color-control { display: flex; align-items: center; gap: 8px; }
+    input[type="color"] { width: 32px; height: 32px; padding: 3px; border: 1px solid var(--line); border-radius: 6px; background: var(--surface); cursor: pointer; }
+    button, select { border: 1px solid var(--line); border-radius: 6px; background: var(--surface); color: var(--ink); font: inherit; }
+    button { padding: 7px 12px; font-size: 12px; cursor: pointer; }
+    button:hover, a:hover { color: var(--accent); }
+    :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+    .grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 16px; }
+    article { min-width: 0; padding: 22px 12px 16px; border: 1px solid var(--line); border-radius: 10px; background: var(--surface); text-align: center; }
+    .sample { display: grid; place-items: center; height: 144px; color: var(--icon-color); }
+    .sample i { font-size: var(--icon-size); }
+    h2 { margin: 12px 0 6px; font-size: 15px; font-weight: 650; }
+    code { font: 11px ui-monospace, monospace; }
+    article code { display: block; color: var(--muted); overflow-wrap: anywhere; }
+    .card-actions { display: flex; justify-content: center; align-items: center; gap: 14px; margin-top: 18px; }
+    a { color: var(--muted); text-underline-offset: 3px; font-size: 12px; }
+    .comparison { margin-top: 32px; }
+    .section-heading { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; margin-bottom: 16px; }
+    .section-heading h2 { margin: 0 0 4px; font-size: 19px; }
+    .section-heading p { font-size: 13px; }
+    .select-control { display: flex; align-items: center; gap: 10px; }
+    select { max-width: 100%; padding: 8px 28px 8px 10px; font-size: 13px; }
+    .comparison-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+    figure { margin: 0; padding: 20px; border: 1px solid var(--line); border-radius: 10px; background: var(--surface); color: var(--icon-color); text-align: center; }
+    figcaption { color: var(--muted); font: 12px ui-monospace, monospace; }
+    .comparison-sample { display: grid; place-items: center; height: 220px; }
+    .comparison-sample i { font-size: 192px; }
+    .comparison-sample img { width: 192px; height: 192px; max-width: 100%; filter: url(#comparison-color); }
+    .usage { margin-top: 24px; padding: 20px; border-left: 3px solid var(--accent); background: var(--surface); }
+    .usage p { margin-bottom: 8px; font-size: 13px; }
+    .usage code { display: block; overflow-wrap: anywhere; line-height: 1.8; }
+    footer { display: flex; flex-wrap: wrap; gap: 12px; justify-content: space-between; margin-top: 24px; color: var(--muted); font-size: 12px; }
+    #copy-status { min-height: 18px; }
+    @media (max-width: 1000px) { .grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+    @media (max-width: 640px) {
+      main { padding: 28px 16px; }
+      header { align-items: flex-start; flex-direction: column; gap: 12px; }
+      .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .toolbar { gap: 16px; }
+      .toolbar-actions { margin-left: 0; }
+      .card-actions { gap: 8px; flex-wrap: wrap; }
+      .comparison-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 360px) { .grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <svg width="0" height="0" style="position: absolute" aria-hidden="true" focusable="false">
+    <defs>
+      <filter id="comparison-color" color-interpolation-filters="sRGB">
+        <feFlood style="flood-color: var(--icon-color)"></feFlood>
+        <feComposite in2="SourceAlpha" operator="in"></feComposite>
+      </filter>
+    </defs>
+  </svg>
+  <main>
+    <header>
+      <div>
+        <h1>EvoPixel Icons</h1>
+        <p>Five brand icons. One font, with matching vector sources.</p>
+      </div>
+      <span class="formats">WOFF2 / SVG</span>
+    </header>
+
+    <div class="toolbar" aria-label="Font gallery controls">
+      <div class="size-control">
+        <label for="icon-size">Size</label>
+        <input id="icon-size" type="range" min="16" max="128" step="1" value="96">
+        <output id="size-value" for="icon-size">96 px</output>
+      </div>
+      <div class="toolbar-actions">
+        <div class="color-control">
+          <label for="icon-color">Color</label>
+          <input id="icon-color" type="color" value="#202326">
+        </div>
+        <button id="theme-toggle" type="button" aria-pressed="false">Dark background</button>
+        <button id="reset" type="button">Reset</button>
+      </div>
+    </div>
+
+    <section class="grid" aria-label="Available icons">
+      <article>
+        <div class="sample"><i class="evopixel-icon evopixel" aria-hidden="true"></i></div>
+        <h2>EvoPixel</h2>
+        <code>evopixel</code>
+        <div class="card-actions">
+          <button type="button" data-icon="evopixel" aria-label="Copy EvoPixel CSS classes">Copy class</button>
+          <a href="svgs/evopixel.svg" aria-label="View EvoPixel SVG">View SVG</a>
+        </div>
+      </article>
+      <article>
+        <div class="sample"><i class="evopixel-icon minecraft-evopixel" aria-hidden="true"></i></div>
+        <h2>Minecraft EvoPixel</h2>
+        <code>minecraft-evopixel</code>
+        <div class="card-actions">
+          <button type="button" data-icon="minecraft-evopixel" aria-label="Copy Minecraft EvoPixel CSS classes">Copy class</button>
+          <a href="svgs/minecraft-evopixel.svg" aria-label="View Minecraft EvoPixel SVG">View SVG</a>
+        </div>
+      </article>
+      <article>
+        <div class="sample"><i class="evopixel-icon rust-evopixel" aria-hidden="true"></i></div>
+        <h2>Rust EvoPixel</h2>
+        <code>rust-evopixel</code>
+        <div class="card-actions">
+          <button type="button" data-icon="rust-evopixel" aria-label="Copy Rust EvoPixel CSS classes">Copy class</button>
+          <a href="svgs/rust-evopixel.svg" aria-label="View Rust EvoPixel SVG">View SVG</a>
+        </div>
+      </article>
+      <article>
+        <div class="sample"><i class="evopixel-icon radio-evopixel" aria-hidden="true"></i></div>
+        <h2>Radio EvoPixel</h2>
+        <code>radio-evopixel</code>
+        <div class="card-actions">
+          <button type="button" data-icon="radio-evopixel" aria-label="Copy Radio EvoPixel CSS classes">Copy class</button>
+          <a href="svgs/radio-evopixel.svg" aria-label="View Radio EvoPixel SVG">View SVG</a>
+        </div>
+      </article>
+      <article>
+        <div class="sample"><i class="evopixel-icon bleah" aria-hidden="true"></i></div>
+        <h2>bLeaH</h2>
+        <code>bleah</code>
+        <div class="card-actions">
+          <button type="button" data-icon="bleah" aria-label="Copy bLeaH CSS classes">Copy class</button>
+          <a href="svgs/bleah.svg" aria-label="View bLeaH SVG">View SVG</a>
+        </div>
+      </article>
+    </section>
+
+    <section class="comparison" aria-labelledby="comparison-title">
+      <div class="section-heading">
+        <div>
+          <h2 id="comparison-title">Font &amp; vector</h2>
+          <p>Compare the original outlines at 192 px.</p>
+        </div>
+        <div class="select-control">
+          <label for="comparison-icon">Icon</label>
+          <select id="comparison-icon">
+            <option value="evopixel">EvoPixel</option>
+            <option value="minecraft-evopixel">Minecraft EvoPixel</option>
+            <option value="rust-evopixel">Rust EvoPixel</option>
+            <option value="radio-evopixel" selected>Radio EvoPixel</option>
+            <option value="bleah">bLeaH</option>
+          </select>
+        </div>
+      </div>
+      <div class="comparison-grid">
+        <figure>
+          <figcaption>WOFF2 font</figcaption>
+          <div class="comparison-sample"><i id="comparison-font" class="evopixel-icon radio-evopixel" role="img" aria-label="Radio EvoPixel"></i></div>
+        </figure>
+        <figure>
+          <figcaption>SVG source</figcaption>
+          <div class="comparison-sample"><img id="comparison-svg" src="svgs/radio-evopixel.svg" width="192" height="192" alt="Radio EvoPixel SVG"></div>
+        </figure>
+      </div>
+    </section>
+
+    <div class="usage">
+      <p>Use the shared class together with the icon name:</p>
+      <code id="usage-example">&lt;i class="evopixel-icon radio-evopixel" aria-hidden="true"&gt;&lt;/i&gt;</code>
+    </div>
+    <footer>
+      <span>Decorative icons use <code>aria-hidden="true"</code>. Label icon-only controls.</span>
+      <span id="copy-status" role="status" aria-live="polite"></span>
+    </footer>
+  </main>
+
+  <script>
+    const size = document.querySelector('#icon-size');
+    const color = document.querySelector('#icon-color');
+    const theme = document.querySelector('#theme-toggle');
+    const selection = document.querySelector('#comparison-icon');
+    const status = document.querySelector('#copy-status');
+
+    function updateColor() {
+      document.documentElement.style.setProperty('--icon-color', color.value);
+    }
+
+    size.addEventListener('input', () => {
+      document.documentElement.style.setProperty('--icon-size', size.value + 'px');
+      document.querySelector('#size-value').value = size.value + ' px';
+    });
+    color.addEventListener('input', updateColor);
+    theme.addEventListener('click', () => {
+      const dark = document.body.classList.toggle('dark');
+      theme.setAttribute('aria-pressed', String(dark));
+      theme.textContent = dark ? 'Light background' : 'Dark background';
+      color.value = dark ? '#f4f5f6' : '#202326';
+      updateColor();
+    });
+    selection.addEventListener('change', () => {
+      const name = selection.value;
+      const label = selection.selectedOptions[0].textContent;
+      const icon = document.querySelector('#comparison-font');
+      const svg = document.querySelector('#comparison-svg');
+      icon.className = 'evopixel-icon ' + name;
+      icon.setAttribute('aria-label', label);
+      svg.src = 'svgs/' + name + '.svg';
+      svg.alt = label + ' SVG';
+      document.querySelector('#usage-example').textContent = '<i class="evopixel-icon ' + name + '" aria-hidden="true"></i>';
+    });
+    document.querySelector('#reset').addEventListener('click', () => {
+      if (document.body.classList.contains('dark')) theme.click();
+      size.value = '96';
+      size.dispatchEvent(new Event('input'));
+      color.value = '#202326';
+      updateColor();
+      selection.value = 'radio-evopixel';
+      selection.dispatchEvent(new Event('change'));
+      status.textContent = '';
+    });
+    document.querySelectorAll('[data-icon]').forEach(button => {
+      let resetTimer;
+      button.addEventListener('click', async () => {
+        const classes = 'evopixel-icon ' + button.dataset.icon;
+        clearTimeout(resetTimer);
+        try {
+          await navigator.clipboard.writeText(classes);
+          button.textContent = 'Copied';
+          status.textContent = 'Copied: ' + classes;
+        } catch {
+          status.textContent = 'Copy these classes: ' + classes;
+        }
+        resetTimer = setTimeout(() => { button.textContent = 'Copy class'; }, 1800);
+      });
+    });
+  </script>
+</body>
+</html>
